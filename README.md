@@ -1,60 +1,60 @@
 
 2. [Let's Enctypt (Certbot) - Quick Installation](#Secure-NGINX-application-with-Let's-Encrypt-on-Ubuntu-18.04---Quick-Installation)
-2. [Let's Enctypt - (Certbot)- Complete Installation](#Secure-NGINX-application-with-Let's-Encrypt-on-Ubuntu-18.04)
+2. [Let's Enctypt - (Certbot)- Complete Installation](#Secure-NGINX-application-with-Let's-Encrypt-on-Ubuntu-18.04---Complete-Installation))
 
 
 ### Secure NGINX application with Let's Encrypt on Ubuntu 18.04 - Quick Installation
 
-Domain Name : http://try_domain.com/
+`Domain Name : http://try_domain.com/`
 
 
-Step 1 — Installing Certbot
+#### Step 1 — Installing Certbot
 
-anup@megatron:~$ sudo apt-get update
+`anup@megatron:~$ sudo apt-get update`
 
-anup@megatron:~$ sudo apt-get install software-properties-common
+`anup@megatron:~$ sudo apt-get install software-properties-common`
 
-anup@megatron:~$ sudo add-apt-repository universe
+`anup@megatron:~$ sudo add-apt-repository universe`
 
-anup@megatron:~$ sudo add-apt-repository ppa:certbot/certbot
+`anup@megatron:~$ sudo add-apt-repository ppa:certbot/certbot`
 
-anup@megatron:~$ sudo apt-get install certbot python3-certbot-nginx
-
-
-Step 2 — Running Certbot
-
-Method one  :  Certbot will edit NGINX configuration automatically to serve it, turning on HTTPS access in a single step
-
-anup@megatron:~$ sudo certbot --nginx 
+`anup@megatron:~$ sudo apt-get install certbot python3-certbot-nginx`
 
 
-Method Two : Get certificates only where to make the changes to nginx configuration by hand 
+#### Step 2 — Running Certbot
 
-anup@megatron:~$ sudo certbot certonly --nginx
+**Method one  :**  Certbot will edit NGINX configuration automatically to serve it, turning on HTTPS access in a single step
+
+`anup@megatron:~$ sudo certbot --nginx`
 
 
-Step 3 — Find your certificates
+**Method Two :** Get certificates only where to make the changes to nginx configuration by hand 
 
-anup@megatron:~$ sudo ls -ltr /etc/letsencrypt/live/try_domain.com
+`anup@megatron:~$ sudo certbot certonly --nginx`
+
+
+#### Step 3 — Find your certificates
+
+`anup@megatron:~$ sudo ls -ltr /etc/letsencrypt/live/try_domain.com`
 
 Check cerificate details
 
-https://www.sslshopper.com/ssl-checker.html
+`https://www.sslshopper.com/ssl-checker.html`
 
 
-Step 4 — Handling Certbot Automatic Renewals
+#### Step 4 — Handling Certbot Automatic Renewals
 
-anup@megatron:~$ cd /etc/crontab
+`anup@megatron:~$ cd /etc/crontab`
 
-anup@megatron:~$ sudo nano /etc/cron.d/certbot
+`anup@megatron:~$ sudo nano /etc/cron.d/certbot`
 
-0 */12 * * * root test -x /usr/bin/certbot -a \! -d /run/systemd/system && perl -e 'sleep int(rand(3600))' && certbot -q$
+`0 */12 * * * root test -x /usr/bin/certbot -a \! -d /run/systemd/system && perl -e 'sleep int(rand(3600))' && certbot -q$`
 
-anup@megatron:~$ sudo certbot renew --dry-run
+`anup@megatron:~$ sudo certbot renew --dry-run`
 
 
 
-### Secure NGINX application with Let's Encrypt on Ubuntu 18.04
+### Secure NGINX application with Let's Encrypt on Ubuntu 18.04 - Quick Installation
 
 `Domain Name : http://try_domain.com/`
 
