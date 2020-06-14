@@ -3,7 +3,7 @@
 1. [Certonly Complete Installation](#Certonly-Complete-Installation)
 
 
-### Certonly Quick Installation
+## Certonly Quick Installation
 
 `Domain Name : http://try_domain.com/`
 
@@ -54,7 +54,7 @@
 
 
 
-### Certonly Complete Installation
+## Certonly Complete Installation
 
 `Domain Name : http://try_domain.com/`
 
