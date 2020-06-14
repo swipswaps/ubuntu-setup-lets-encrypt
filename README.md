@@ -37,7 +37,7 @@
 
 `anup@megatron:~$ sudo ls -ltr /etc/letsencrypt/live/try_domain.com`
 
-Check cerificate details
+**Check cerificate details**
 
 `https://www.sslshopper.com/ssl-checker.html`
 
