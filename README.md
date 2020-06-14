@@ -130,9 +130,9 @@ https://www.sslshopper.com/ssl-checker.html
 
 ### Edit domain server block
 
-anup@megatron:~$ sudo nano /etc/nginx/sites-available/try_domain.com.conf
+`anup@megatron:~$ sudo nano /etc/nginx/sites-available/try_domain.com.conf`
 
-server {
+```server {
 
 listen 80;
 
@@ -180,25 +180,27 @@ include snippets/ssl.conf;
 
 include snippets/letsencrypt.conf;
 
-# . . . other code
+. . . other code
 
-}
+}```
 
 
 ### Reload NGINX service for the changes to take effect
 
-anup@megatron:~$ sudo nginx -t
+`anup@megatron:~$ sudo nginx -t`
 
-anup@megatron:~$ sudo systemctl reload nginx
+`anup@megatron:~$ sudo systemctl reload nginx`
 
-anup@megatron:~$ sudo systemctl status nginx
+`anup@megatron:~$ sudo systemctl status nginx`
 
 
 ### Auto-renewing Let’s Encrypt SSL certificate
 
-anup@megatron:~$ sudo nano /etc/cron.d/certbot
+`anup@megatron:~$ sudo nano /etc/cron.d/certbot`
 
-0 */12 * * * root test -x /usr/bin/certbot -a ! -d /run/systemd/system && perl -e 'sleep int(rand(3600))' && certbot -q$
-To test the renewal process, use "certbot --dry-run"
+`0 */12 * * * root test -x /usr/bin/certbot -a ! -d /run/systemd/system && perl -e 'sleep int(rand(3600))' && certbot -q$`
 
-anup@megatron:~$ sudo certbot renew --dry-run
+
+### To test the renewal process, use "certbot --dry-run"
+
+`anup@megatron:~$ sudo certbot renew --dry-run`
