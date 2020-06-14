@@ -4,7 +4,7 @@
 
 ## Secure NGINX application with Let's Encrypt on Ubuntu 18.04
 
-Name : http://try_.com/
+Domain Name : http://try_domain.com/
 
 
 ### Install Nginx on Ubuntu 18.04
@@ -121,10 +121,14 @@ anup@megatron:~$ sudo systemctl status nginx
 Run certbot with the webroot plugin and obtain the SSL certificate files
 
 anup@megatron:~$ sudo certbot certonly --agree-tos --email uniqs.anup@gmail.com --webroot -w /var/lib/letsencrypt/ -d try_domain.com -d try_domain.com
-Check cerificate
+
+
+### Check cerificate
 
 https://www.sslshopper.com/ssl-checker.html
-Edit domain server block
+
+
+### Edit domain server block
 
 anup@megatron:~$ sudo nano /etc/nginx/sites-available/try_domain.com.conf
 
