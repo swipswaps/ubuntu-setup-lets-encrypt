@@ -7,7 +7,7 @@
 `Domain Name : http://try_domain.com/`
 
 
-### Install Nginx on Ubuntu 18.04
+#### Install Nginx on Ubuntu 18.04
 
 `anup@megatron:~$ clear`
 
@@ -20,7 +20,7 @@
 `anup@megatron:~$ ifconfig`
 
 
-### Configuring firewall for NGINX
+#### Configuring firewall for NGINX
 
 `anup@megatron:~$ sudo ufw allow 'Nginx Full'`
 
