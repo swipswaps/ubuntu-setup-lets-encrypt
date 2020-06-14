@@ -3,7 +3,7 @@
 1. [Let's Enctypt (Certbot) - Complete Installation with certonly](#Secure-NGINX-application-with-Let's-Encrypt-on-Ubuntu-18.04-Complete-Installation)
 
 
-### Secure NGINX application with Let's Encrypt on Ubuntu 18.04 Quick-Installation
+### Secure NGINX application with Let's Encrypt on Ubuntu 18.04 Quick Installation
 
 `Domain Name : http://try_domain.com/`
 
