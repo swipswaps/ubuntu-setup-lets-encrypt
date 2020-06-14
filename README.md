@@ -1,5 +1,6 @@
 
-1. [Detailed Installation Let's Enctypt - Certbot](#Secure-NGINX-application-with-Let's-Encrypt-on-Ubuntu-18.04)
+2. [Let's Enctypt (Certbot) - Quick Installation](#Secure-NGINX-application-with-Let's-Encrypt-on-Ubuntu-18.04)
+2. [Let's Enctypt - (Certbot)- Complete Installation](#Secure-NGINX-application-with-Let's-Encrypt-on-Ubuntu-18.04)
 
 
 ### Secure NGINX application with Let's Encrypt on Ubuntu 18.04
