@@ -48,17 +48,19 @@ anup@megatron:~$ sudo chmod g+s /var/lib/letsencrypt
 
 anup@megatron:~$ sudo nano /etc/nginx/snippets/letsencrypt.conf
 
+```
 location ^~ /.well-known/acme-challenge/ {
 
-allow all;
+    allow all;
 
-root /var/lib/letsencrypt/;
+    root /var/lib/letsencrypt/;
 
-default_type "text/plain";
+    default_type "text/plain";
 
-try_files $uri =404;
+    try_files $uri =404;
 
 }
+```
 
 
 ### Create second snippet, "ssl.conf" to to avoid duplicating code which we’re going to include in all our NGINX server block files
@@ -98,15 +100,17 @@ add_header X-Content-Type-Options nosniff;
 
 anup@megatron:~$ sudo nano /etc/nginx/sites-available/try_domain.com.conf
 
+```
 server {
 
-listen 80;
+    listen 80;
 
-server_name www.try_domain.com try_domain.com;
+    server_name www.try_domain.com try_domain.com;
 
-include snippets/letsencrypt.conf;
+    include snippets/letsencrypt.conf;
 
 }
+```
 
 
 ### Create a symbolic link and restart NGINX service for the changes to take effect
@@ -132,7 +136,8 @@ https://www.sslshopper.com/ssl-checker.html
 
 `anup@megatron:~$ sudo nano /etc/nginx/sites-available/try_domain.com.conf`
 
-```server {
+```
+server {
 
 listen 80;
 
@@ -182,7 +187,8 @@ include snippets/letsencrypt.conf;
 
 . . . other code
 
-}```
+}
+```
 
 
 ### Reload NGINX service for the changes to take effect
