@@ -1,6 +1,6 @@
 
 1. [Let's Enctypt (Certbot) - Quick Installation with certonly](#Secure-NGINX-application-with-Let's-Encrypt-on-Ubuntu-18.04---Quick-Installation)
-2. [Let's Enctypt - (Certbot)- Complete Installation with certonly](#Secure-NGINX-application-with-Let's-Encrypt-on-Ubuntu-18.04---Complete-Installation)
+2. [Let's Enctypt - (Certbot)- Complete Installation with certonly](#Secure-NGINX-application-with-Let's-Encrypt-on-Ubuntu-18.04---Quick Installation)
 
 
 ### Secure NGINX application with Let's Encrypt on Ubuntu 18.04 - Quick Installation
