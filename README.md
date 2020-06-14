@@ -1,11 +1,11 @@
-
-Secure NGINX application with Let's Encrypt on Ubuntu 18.04
+  
+# Secure NGINX application with Let's Encrypt on Ubuntu 18.04
 
 
 Domain Name : http://try_domain.com/
 
 
-# Install Nginx on Ubuntu 18.04
+### Install Nginx on Ubuntu 18.04
 
 anup@megatron:~$ clear
 
@@ -18,32 +18,26 @@ anup@megatron:~$ sudo systemctl status nginx
 anup@megatron:~$ ifconfig
 
 
-
-# Configuring firewall for NGINX
+### Configuring firewall for NGINX
 
 anup@megatron:~$ sudo ufw allow 'Nginx Full'
 
 anup@megatron:~$ sudo ufw status
 
 
-
-# Install Certbot 
+### Install Certbot 
 
 anup@megatron:~$ sudo apt update
 
 anup@megatron:~$ sudo apt install certbot
 
 
-
-# Generate Strong Dh (Diffie-Hellman) Group
+### Generate Strong Dh (Diffie-Hellman) Group
 
 anup@megatron:~$ sudo openssl dhparam -out /etc/ssl/certs/dhparam.pem 2048
 
 
-
-# Obtaining a Let’s Encrypt SSL certificate
-
-
+### Obtaining a Let’s Encrypt SSL certificate
 
 anup@megatron:~$ sudo mkdir -p /var/lib/letsencrypt/.well-known
 
@@ -52,8 +46,7 @@ anup@megatron:~$ sudo chgrp www-data /var/lib/letsencrypt
 anup@megatron:~$ sudo chmod g+s /var/lib/letsencrypt
 
 
-
-# Create  first snippet, "letsencrypt.conf" to to avoid duplicating code which we’re going to include in all our NGINX server block files
+### Create  first snippet, "letsencrypt.conf" to to avoid duplicating code which we’re going to include in all our NGINX server block files
 
 anup@megatron:~$ sudo nano /etc/nginx/snippets/letsencrypt.conf
 
@@ -71,8 +64,7 @@ location ^~ /.well-known/acme-challenge/ {
 }
 
 
-
-# Create  first snippet, "ssl.conf" to to avoid duplicating code which we’re going to include in all our NGINX server block files
+### Create  first snippet, "ssl.conf" to to avoid duplicating code which we’re going to include in all our NGINX server block files
 
 anup@megatron:~$ sudo nano /etc/nginx/snippets/ssl.conf
 
@@ -109,8 +101,7 @@ add_header X-Frame-Options SAMEORIGIN;
 add_header X-Content-Type-Options nosniff;
 
 
-
-# Include the letsencrypt.conf snippet to the domain server block
+### Include the letsencrypt.conf snippet to the domain server block
 
 anup@megatron:~$ sudo nano /etc/nginx/sites-available/domain.com.conf
 
@@ -126,8 +117,7 @@ server {
 }
 
 
-
-# Create a symbolic link and restart NGINX service for the changes to take effect
+### Create a symbolic link and restart NGINX service for the changes to take effect
 
 anup@megatron:~$ sudo ln -s /etc/nginx/sites-available/domain.com.conf /etc/nginx/sites-enabled/
 
@@ -138,20 +128,17 @@ anup@megatron:~$ sudo systemctl restart nginx
 anup@megatron:~$ sudo systemctl status nginx
 
 
-
-# Run certbot with the webroot plugin and obtain the SSL certificate files
+### Run certbot with the webroot plugin and obtain the SSL certificate files
 
 anup@megatron:~$ sudo certbot certonly --agree-tos --email uniqs.anup@gmail.com --webroot -w /var/lib/letsencrypt/ -d domain.com -d domain.com
 
 
-
-# Check cerificate
+### Check cerificate
 
 https://www.sslshopper.com/ssl-checker.html   
 
 
-
-# Edit domain server block 
+### Edit domain server block 
 
 anup@megatron:~$ sudo nano /etc/nginx/sites-available/domain.com.conf
 
@@ -210,8 +197,7 @@ server {
 }
 
 
-
-# Reload NGINX service for the changes to take effect
+### Reload NGINX service for the changes to take effect
 
 anup@megatron:~$ sudo nginx -t
 
@@ -220,15 +206,13 @@ anup@megatron:~$ sudo systemctl reload nginx
 anup@megatron:~$ sudo systemctl status nginx
 
 
-
-# Auto-renewing Let’s Encrypt SSL certificate 
+### Auto-renewing Let’s Encrypt SSL certificate 
 
 anup@megatron:~$ sudo nano /etc/cron.d/certbot
 
 0 */12 * * * root test -x /usr/bin/certbot -a \! -d /run/systemd/system && perl -e 'sleep int(rand(3600))' && certbot -q$
 
 
-
-# To test the renewal process, use  "certbot --dry-run" 
+### To test the renewal process, use  "certbot --dry-run" 
 
 anup@megatron:~$ sudo certbot renew --dry-run
