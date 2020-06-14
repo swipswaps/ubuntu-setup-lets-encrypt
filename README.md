@@ -36,16 +36,16 @@
 
 ### Generate Strong Dh (Diffie-Hellman) Group
 
-anup@megatron:~$ sudo openssl dhparam -out /etc/ssl/certs/dhparam.pem 2048
+`anup@megatron:~$ sudo openssl dhparam -out /etc/ssl/certs/dhparam.pem 2048`
 
 
 ### Obtaining a Let’s Encrypt SSL certificate
 
-anup@megatron:~$ sudo mkdir -p /var/lib/letsencrypt/.well-known
+`anup@megatron:~$ sudo mkdir -p /var/lib/letsencrypt/.well-known`
 
-anup@megatron:~$ sudo chgrp www-data /var/lib/letsencrypt
+`anup@megatron:~$ sudo chgrp www-data /var/lib/letsencrypt`
 
-anup@megatron:~$ sudo chmod g+s /var/lib/letsencrypt
+`anup@megatron:~$ sudo chmod g+s /var/lib/letsencrypt`
 
 
 ### Create first snippet, "letsencrypt.conf" to to avoid duplicating code which we’re going to include in all our NGINX server block files
