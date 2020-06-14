@@ -1,6 +1,6 @@
 
 1. [Certonly Quick Installation](#Certonly-Quick-Installation)
-1. [Certonly Complete Installation](#Certonly-Complete-Installation)
+2. [Certonly Complete Installation](#Certonly-Complete-Installation)
 
 
 ## Certonly Quick Installation
