@@ -28,7 +28,7 @@
 `anup@megatron:~$ sudo certbot --nginx`
 
 
-**Method Two :** Get certificates only where to make the changes to nginx configuration by hand 
+**Method two :** Get certificates only where to make the changes to nginx configuration by hand 
 
 `anup@megatron:~$ sudo certbot certonly --nginx`
 
