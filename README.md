@@ -1,11 +1,11 @@
 
-1. [Certonly Quick Installation](#Certonly-Quick-Installation)
-2. [Certonly Complete Installation](#Certonly-Complete-Installation)
-3. [Certonly Standalone](#Certonly-Standalone-Installation)
-4. [Certonly Manual](#Certonly-Manual-Installation)
+1. [Certonly Quick Integration](#Certonly-Quick-Integration)
+2. [Certonly Complete Installation](#Certonly-Complete-Integration)
+3. [Certonly Standalone Integration](#Certonly-Standalone-Installation)
+4. [Certonly Manual Integration](#Certonly-Manual-Integration)
 
 
-## Certonly Quick Installation
+## Certonly Quick Integration
 
 `Domain Name : http://try_domain.com/`
 
@@ -56,7 +56,7 @@
 
 
 
-## Certonly Complete Installation
+## Certonly Complete Integration
 
 `Domain Name : http://try_domain.com/`
 
@@ -276,7 +276,7 @@ include snippets/letsencrypt.conf;
 `anup@megatron:~$ sudo certbot renew --dry-run`
 
 
-## Certonly Standalone Installation
+## Certonly Standalone Integration
 
 
 `Domain Name : http://try_domain.com/`
@@ -327,7 +327,7 @@ include snippets/letsencrypt.conf;
 
 
 
-## Certonly Manual Installation
+## Certonly Manual Integration
 
 
 `Domain Name : http://try_domain.com/`
