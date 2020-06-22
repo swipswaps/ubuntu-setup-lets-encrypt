@@ -364,9 +364,9 @@ EBAOrPhUas99hBf65odIy264j69w-olqjV00vCCkUNY
 Before continuing, verify the record is deployed.
 - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 ```
-Before continue ,  
+**Before continue ,**    
 
-Add the TXT record to domain provider portal 
+**Add the TXT record to domain provider portal**
 
 `https://docs.aws.amazon.com/ses/latest/DeveloperGuide/dns-txt-records.html`
 
