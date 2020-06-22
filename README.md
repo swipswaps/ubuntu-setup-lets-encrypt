@@ -284,46 +284,46 @@ include snippets/letsencrypt.conf;
 
 #### Step 1 — Installing Certbot
 
-anup@megatron:~$ sudo apt-get update
+`anup@megatron:~$ sudo apt-get update`
 
-anup@megatron:~$ sudo apt-get install software-properties-common
+`anup@megatron:~$ sudo apt-get install software-properties-common`
 
-anup@megatron:~$ sudo add-apt-repository universe
+`anup@megatron:~$ sudo add-apt-repository universe`
 
-anup@megatron:~$ sudo add-apt-repository ppa:certbot/certbot
+`anup@megatron:~$ sudo add-apt-repository ppa:certbot/certbot`
 
-anup@megatron:~$ sudo apt-get install certbot
+`anup@megatron:~$ sudo apt-get install certbot`
 
 
 #### Step 2 — Running Certbot
 
-HTTP Verification - 
+**HTTP Verification -** 
 
-anup@megatron:~$ sudo certbot certonly --standalone --preferred-challenges http -d try_domain.com -d try_domain.com
+`anup@megatron:~$ sudo certbot certonly --standalone --preferred-challenges http -d try_domain.com -d try_domain.com`
 
-Pre and Post Validation Hooks configuration for http
+**Pre and Post Validation Hooks configuration for http**
 
-https://certbot.eff.org/docs/using.html#pre-and-post-validation-hooks
+`https://certbot.eff.org/docs/using.html#pre-and-post-validation-hooks`
 
 
 #### Step 3 — Find your certificates
 
-anup@megatron:~$ sudo ls -ltr /etc/letsencrypt/live/try_domain.com
+`anup@megatron:~$ sudo ls -ltr /etc/letsencrypt/live/try_domain.com`
 
-Check cerificate details
+**Check cerificate details**
 
-https://www.sslshopper.com/ssl-checker.html
+`https://www.sslshopper.com/ssl-checker.html`
 
 
 #### Step 4 — Handling Certbot Automatic Renewals
 
-anup@megatron:~$ cd /etc/crontab
+`anup@megatron:~$ cd /etc/crontab`
 
-anup@megatron:~$ sudo nano /etc/cron.d/certbot
+`anup@megatron:~$ sudo nano /etc/cron.d/certbot`
 
-0 */12 * * * root test -x /usr/bin/certbot -a \! -d /run/systemd/system && perl -e 'sleep int(rand(3600))' && certbot -q$
+`0 */12 * * * root test -x /usr/bin/certbot -a \! -d /run/systemd/system && perl -e 'sleep int(rand(3600))' && certbot -q$`
 
-anup@megatron:~$ sudo certbot renew --dry-run
+`anup@megatron:~$ sudo certbot renew --dry-run`
 
 
 
