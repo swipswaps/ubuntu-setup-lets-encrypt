@@ -406,3 +406,10 @@ Before continuing, verify the record is deployed.
 `0 */12 * * * root test -x /usr/bin/certbot -a \! -d /run/systemd/system && perl -e 'sleep int(rand(3600))' && certbot -q$`
 
 `anup@megatron:~$ sudo certbot renew --dry-run`
+
+
+<hr />
+
+`@AnuRish Brand Corp. , +91-9620481097 , uniqs.anup@gmail.com , https://www.linkedin.com/in/anuniqs/`
+  
+ 
