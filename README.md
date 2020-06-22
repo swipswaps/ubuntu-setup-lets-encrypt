@@ -1,6 +1,6 @@
 
 1. [Certonly Quick Integration](#Certonly-Quick-Integration)
-2. [Certonly Complete Installation](#Certonly-Complete-Integration)
+2. [Certonly Production Integration](#Certonly-Production-Integration)
 3. [Certonly Standalone Integration](#Certonly-Standalone-Installation)
 4. [Certonly Manual Integration](#Certonly-Manual-Integration)
 
@@ -56,7 +56,7 @@
 
 
 
-## Certonly Complete Integration
+## Certonly Production Integration
 
 `Domain Name : http://try_domain.com/`
 
