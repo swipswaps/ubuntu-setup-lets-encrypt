@@ -330,5 +330,79 @@ include snippets/letsencrypt.conf;
 ## Certonly Manual Installation
 
 
+`Domain Name : http://try_domain.com/`
 
 
+#### Step 1 — Installing Certbot
+
+`netadmin@dotest:~$ sudo apt-get update`
+
+`netadmin@dotest:~$ sudo apt-get install software-properties-common`
+
+`netadmin@dotest:~$ sudo add-apt-repository universe`
+
+`netadmin@dotest:~$ sudo add-apt-repository ppa:certbot/certbot`
+
+`netadmin@dotest:~$ sudo apt-get update`
+
+`netadmin@dotest:~$ sudo apt-get install certbot`
+
+
+#### Step 2 — Obtain SSL Certificate
+
+**DNS Verification -**
+
+```
+netadmin@dotest:~$ sudo certbot certonly --manual --preferred-challenges dns
+
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+Please deploy a DNS TXT record under the name
+_acme-challenge.try_domain.com with the following value:
+
+EBAOrPhUas99hBf65odIy264j69w-olqjV00vCCkUNY
+
+Before continuing, verify the record is deployed.
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+```
+Before continue ,  
+
+Add the TXT record to domain provider portal 
+
+`https://docs.aws.amazon.com/ses/latest/DeveloperGuide/dns-txt-records.html`
+
+`netadmin@dotest:~$ dig -t txt _acme-challenge.try_domain.com.txt`
+
+`netadmin@dotest:~$ la -lth /etc/letsencrypt/live/try_domain.com/`
+
+
+**Pre and Post Validation Hooks configuration for DNS**
+
+`https://certbot.eff.org/docs/using.html#pre-and-post-validation-hooks`
+
+**Will ask to create API key , and to generate visit below links -**
+
+`https://docs.aws.amazon.com/apigateway/latest/developerguide/api-gateway-setup-api-key-with-console.html#api-gateway-usage-plan-create-apikey`
+
+`https://www.cloudflare.com/a/account/my-account`
+
+
+#### Step 3 — Find your certificates
+
+`anup@megatron:~$ sudo ls -ltr /etc/letsencrypt/live/try_domain.com`
+
+**Check cerificate details**
+
+`https://www.sslshopper.com/ssl-checker.html`
+
+`Secure NGINX application with Let's Encrypt on Ubuntu 18.04 Quick Installation`
+
+
+#### Step 4 — Handling Certbot Automatic Renewals
+
+`anup@megatron:~$ cd /etc/crontab`
+
+`anup@megatron:~$ sudo nano /etc/cron.d/certbot`
+
+`0 */12 * * * root test -x /usr/bin/certbot -a \! -d /run/systemd/system && perl -e 'sleep int(rand(3600))' && certbot -q$`
+
+`anup@megatron:~$ sudo certbot renew --dry-run`
