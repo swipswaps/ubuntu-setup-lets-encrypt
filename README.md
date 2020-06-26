@@ -425,7 +425,7 @@ Before continuing, verify the record is deployed.
 
 `anup@megatron:~$ ls -lht (Check permissions)`
 
-`anup@megatron:~$ sudo ./certbot-auto --apache (Run the certbot-auto script to install python packages) "`
+`anup@megatron:~$ sudo ./certbot-auto --apache (Run the certbot-auto script to install python packages)`
 
 
 <hr />
