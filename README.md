@@ -3,7 +3,7 @@
 2. [Certonly Production Integration](#Certonly-Production-Integration)
 3. [Certonly Standalone Integration](#Certonly-Standalone-Installation)
 4. [Certonly Manual Integration](#Certonly-Manual-Integration)
-5. [Script-For-Automation](#Script-For-Automation)
+5. [Script-For-Automation](#Script For Automation)
 
 
 ## Certonly Quick Integration
