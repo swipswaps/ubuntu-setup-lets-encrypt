@@ -3,6 +3,7 @@
 2. [Certonly Production Integration](#Certonly-Production-Integration)
 3. [Certonly Standalone Integration](#Certonly-Standalone-Installation)
 4. [Certonly Manual Integration](#Certonly-Manual-Integration)
+5. [Script-For-Automation](#Script-For-Automation)
 
 
 ## Certonly Quick Integration
@@ -406,6 +407,25 @@ Before continuing, verify the record is deployed.
 `0 */12 * * * root test -x /usr/bin/certbot -a \! -d /run/systemd/system && perl -e 'sleep int(rand(3600))' && certbot -q$`
 
 `anup@megatron:~$ sudo certbot renew --dry-run`
+
+
+## Script For Automation
+
+`anup@megatron:~$ clear (Clear screen)`
+
+`anup@megatron:~$ cd ~ (Change to home directory)`
+
+`anup@megatron:~$ sudo apt-get update (Update repositories)`
+
+`anup@megatron:~$ wget https://dl.eff.org/certbot-auto (Download certbot script)`
+
+`anup@megatron:~$ ls -lht (Check download)`
+
+`anup@megatron:~$ chmod a+x certbot-auto (Give executable permission)`
+
+`anup@megatron:~$ ls -lht (Check permissions)`
+
+`anup@megatron:~$ sudo ./certbot-auto --apache (Run the certbot-auto script to install python packages) " ! On my system it didn't got installed as my system don't have any domain name registered but this will work on client machine"`
 
 
 <hr />
