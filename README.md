@@ -430,6 +430,5 @@ Before continuing, verify the record is deployed.
 
 <hr />
 
-`@AnuRish Brand Corp. , +91-9620481097 , uniqs.anup@gmail.com , https://www.linkedin.com/in/anuniqs/`
-  
- 
+`@ Anup Kumar Mondal, AnuRish Brand Corp. , +91-9620481097 , uniqs.anup@gmail.com , https://www.linkedin.com/in/anuniqs/`
+     
