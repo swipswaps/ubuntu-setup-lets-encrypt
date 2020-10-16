@@ -427,8 +427,3 @@ Before continuing, verify the record is deployed.
 
 `anup@megatron:~$ sudo ./certbot-auto --apache (Run the certbot-auto script to install python packages)`
 
-
-<hr />
-
-`@ Anup Kumar Mondal, AnuRish Brand Corp. , +91-9620481097 , uniqs.anup@gmail.com , https://www.linkedin.com/in/anuniqs/`
-     
